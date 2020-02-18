@@ -1,6 +1,7 @@
 using Sodium.LibSodium
 using Test
 
-@testset "Sodium.jl" begin
-    # Write your own tests here.
+@testset "Sodium" begin
+    @test sodium_init() ≥ 0
+    @info "libsodium library version : " * unsafe_string(sodium_version_string())
 end
