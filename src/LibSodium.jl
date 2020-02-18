@@ -3,13 +3,6 @@ module LibSodium
 using libsodium_jll
 export libsodium_jll
 
-using CEnum
-
-const Ctm = Base.Libc.TmStruct
-const Ctime_t = UInt
-const Cclock_t = UInt
-export Ctm, Ctime_t, Cclock_t
-
 # patches
 const UINT64_MAX = typemax(UInt64)
 const SIZE_MAX = typemax(UInt32)
