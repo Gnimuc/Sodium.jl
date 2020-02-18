@@ -6,7 +6,7 @@ const crypto_aead_aes256gcm_NSECBYTES = UInt32(0)
 const crypto_aead_aes256gcm_NPUBBYTES = UInt32(12)
 const crypto_aead_aes256gcm_ABYTES = UInt32(16)
 
-# Skipping MacroDefinition: crypto_aead_aes256gcm_MESSAGEBYTES_MAX SODIUM_MIN ( SODIUM_SIZE_MAX - crypto_aead_aes256gcm_ABYTES , ( 16ULL * ( ( 1ULL << 32 ) - 2ULL ) ) )
+const crypto_aead_aes256gcm_MESSAGEBYTES_MAX = SODIUM_MIN(SODIUM_SIZE_MAX - crypto_aead_aes256gcm_ABYTES , ( Culonglong(16) * ( ( Culonglong(1) << 32 ) - Culonglong(2) ) ) )
 
 const crypto_aead_aes256gcm_state = crypto_aead_aes256gcm_state_
 const crypto_aead_chacha20poly1305_ietf_KEYBYTES = UInt32(32)
@@ -14,7 +14,7 @@ const crypto_aead_chacha20poly1305_ietf_NSECBYTES = UInt32(0)
 const crypto_aead_chacha20poly1305_ietf_NPUBBYTES = UInt32(12)
 const crypto_aead_chacha20poly1305_ietf_ABYTES = UInt32(16)
 
-# Skipping MacroDefinition: crypto_aead_chacha20poly1305_ietf_MESSAGEBYTES_MAX SODIUM_MIN ( SODIUM_SIZE_MAX - crypto_aead_chacha20poly1305_ietf_ABYTES , ( 64ULL * ( ( 1ULL << 32 ) - 1ULL ) ) )
+const crypto_aead_chacha20poly1305_ietf_MESSAGEBYTES_MAX = SODIUM_MIN(SODIUM_SIZE_MAX - crypto_aead_chacha20poly1305_ietf_ABYTES, (Culonglong(64) * ( ( Culonglong(1) << 32 ) - Culonglong(1) ) ) )
 
 const crypto_aead_chacha20poly1305_KEYBYTES = UInt32(32)
 const crypto_aead_chacha20poly1305_NSECBYTES = UInt32(0)
@@ -209,8 +209,6 @@ const crypto_pwhash_MEMLIMIT_SENSITIVE = crypto_pwhash_argon2id_MEMLIMIT_SENSITI
 const crypto_pwhash_PRIMITIVE = "argon2i"
 const crypto_pwhash_argon2i_BYTES_MIN = UInt32(16)
 
-# Skipping MacroDefinition: crypto_pwhash_argon2i_BYTES_MAX SODIUM_MIN ( SODIUM_SIZE_MAX , 4294967295U )
-
 const crypto_pwhash_argon2i_PASSWD_MIN = UInt32(0)
 const crypto_pwhash_argon2i_PASSWD_MAX = UInt32(4294967295)
 const crypto_pwhash_argon2i_SALTBYTES = UInt32(16)
@@ -220,7 +218,6 @@ const crypto_pwhash_argon2i_OPSLIMIT_MIN = UInt32(3)
 const crypto_pwhash_argon2i_OPSLIMIT_MAX = UInt32(4294967295)
 const crypto_pwhash_argon2i_MEMLIMIT_MIN = UInt32(8192)
 
-# Skipping MacroDefinition: crypto_pwhash_argon2i_MEMLIMIT_MAX ( ( SIZE_MAX >= 4398046510080U ) ? 4398046510080U : ( SIZE_MAX >= 2147483648U ) ? 2147483648U : 32768U )
 
 const crypto_pwhash_argon2i_OPSLIMIT_INTERACTIVE = UInt32(4)
 const crypto_pwhash_argon2i_MEMLIMIT_INTERACTIVE = UInt32(33554432)
@@ -229,12 +226,10 @@ const crypto_pwhash_argon2i_MEMLIMIT_MODERATE = UInt32(134217728)
 const crypto_pwhash_argon2i_OPSLIMIT_SENSITIVE = UInt32(8)
 const crypto_pwhash_argon2i_MEMLIMIT_SENSITIVE = UInt32(536870912)
 
-# Skipping MacroDefinition: crypto_pwhash_argon2id_BYTES_MAX SODIUM_MIN ( SODIUM_SIZE_MAX , 4294967295U )
-# Skipping MacroDefinition: crypto_pwhash_argon2id_MEMLIMIT_MAX ( ( SIZE_MAX >= 4398046510080U ) ? 4398046510080U : ( SIZE_MAX >= 2147483648U ) ? 2147483648U : 32768U )
 
 const crypto_pwhash_scryptsalsa208sha256_BYTES_MIN = UInt32(16)
 
-# Skipping MacroDefinition: crypto_pwhash_scryptsalsa208sha256_BYTES_MAX SODIUM_MIN ( SODIUM_SIZE_MAX , 0x1fffffffe0ULL )
+const crypto_pwhash_scryptsalsa208sha256_BYTES_MAX = SODIUM_MIN(SODIUM_SIZE_MAX, Culonglong(0x1fffffffe0) )
 
 const crypto_pwhash_scryptsalsa208sha256_PASSWD_MIN = UInt32(0)
 const crypto_pwhash_scryptsalsa208sha256_PASSWD_MAX = SODIUM_SIZE_MAX
@@ -245,7 +240,7 @@ const crypto_pwhash_scryptsalsa208sha256_OPSLIMIT_MIN = UInt32(32768)
 const crypto_pwhash_scryptsalsa208sha256_OPSLIMIT_MAX = UInt32(4294967295)
 const crypto_pwhash_scryptsalsa208sha256_MEMLIMIT_MIN = UInt32(16777216)
 
-# Skipping MacroDefinition: crypto_pwhash_scryptsalsa208sha256_MEMLIMIT_MAX SODIUM_MIN ( SIZE_MAX , 68719476736ULL )
+const crypto_pwhash_scryptsalsa208sha256_MEMLIMIT_MAX = SODIUM_MIN(SIZE_MAX, Culonglong(68719476736))
 
 const crypto_pwhash_scryptsalsa208sha256_OPSLIMIT_INTERACTIVE = UInt32(524288)
 const crypto_pwhash_scryptsalsa208sha256_MEMLIMIT_INTERACTIVE = UInt32(16777216)
@@ -281,7 +276,7 @@ const crypto_secretstream_xchacha20poly1305_ABYTES = UInt32(1) + crypto_aead_xch
 const crypto_secretstream_xchacha20poly1305_HEADERBYTES = crypto_aead_xchacha20poly1305_ietf_NPUBBYTES
 const crypto_secretstream_xchacha20poly1305_KEYBYTES = crypto_aead_xchacha20poly1305_ietf_KEYBYTES
 
-# Skipping MacroDefinition: crypto_secretstream_xchacha20poly1305_MESSAGEBYTES_MAX SODIUM_MIN ( SODIUM_SIZE_MAX - crypto_secretstream_xchacha20poly1305_ABYTES , ( 64ULL * ( ( 1ULL << 32 ) - 2ULL ) ) )
+const crypto_secretstream_xchacha20poly1305_MESSAGEBYTES_MAX = SODIUM_MIN(SODIUM_SIZE_MAX - crypto_secretstream_xchacha20poly1305_ABYTES , ( Culonglong(64) * ( ( Culonglong(1) << 32 ) - Culonglong(2) ) ) )
 
 const crypto_secretstream_xchacha20poly1305_TAG_MESSAGE = 0x00
 const crypto_secretstream_xchacha20poly1305_TAG_PUSH = 0x01
@@ -334,7 +329,7 @@ const crypto_stream_chacha20_MESSAGEBYTES_MAX = SODIUM_SIZE_MAX
 const crypto_stream_chacha20_ietf_KEYBYTES = UInt32(32)
 const crypto_stream_chacha20_ietf_NONCEBYTES = UInt32(12)
 
-# Skipping MacroDefinition: crypto_stream_chacha20_ietf_MESSAGEBYTES_MAX SODIUM_MIN ( SODIUM_SIZE_MAX , 64ULL * ( 1ULL << 32 ) )
+const crypto_stream_chacha20_ietf_MESSAGEBYTES_MAX = SODIUM_MIN(SODIUM_SIZE_MAX, Culonglong(64) * ( Culonglong(1) << 32 ) )
 
 const crypto_stream_chacha20_IETF_KEYBYTES = crypto_stream_chacha20_ietf_KEYBYTES
 const crypto_stream_chacha20_IETF_NONCEBYTES = crypto_stream_chacha20_ietf_NONCEBYTES
@@ -356,12 +351,12 @@ const crypto_verify_64_BYTES = UInt32(64)
 
 # Skipping MacroDefinition: SODIUM_EXPORT __attribute__ ( ( visibility ( "default" ) ) )
 
-const SODIUM_EXPORT_WEAK = SODIUM_EXPORT
+# const SODIUM_EXPORT_WEAK = SODIUM_EXPORT
 
 # Skipping MacroDefinition: CRYPTO_ALIGN ( x ) __attribute__ ( ( aligned ( x ) ) )
 # Skipping MacroDefinition: SODIUM_MIN ( A , B ) ( ( A ) < ( B ) ? ( A ) : ( B ) )
 # Skipping MacroDefinition: SODIUM_SIZE_MAX SODIUM_MIN ( UINT64_MAX , SIZE_MAX )
-# Skipping MacroDefinition: randombytes_BYTES_MAX SODIUM_MIN ( SODIUM_SIZE_MAX , 0xffffffffUL )
+const randombytes_BYTES_MAX = SODIUM_MIN(SODIUM_SIZE_MAX, Culong(0xffffffff))
 
 const randombytes_SEEDBYTES = UInt32(32)
 
@@ -374,7 +369,7 @@ struct randombytes_implementation
     close::Ptr{Cvoid}
 end
 
-const randombytes_salsa20_implementation = randombytes_internal_implementation
+# const randombytes_salsa20_implementation = randombytes_internal_implementation
 
 # Skipping MacroDefinition: SODIUM_C99 ( X ) X
 
@@ -383,7 +378,7 @@ const sodium_base64_VARIANT_ORIGINAL_NO_PADDING = 3
 const sodium_base64_VARIANT_URLSAFE = 5
 const sodium_base64_VARIANT_URLSAFE_NO_PADDING = 7
 
-# Skipping MacroDefinition: sodium_base64_ENCODED_LEN ( BIN_LEN , VARIANT ) ( ( ( BIN_LEN ) / 3U ) * 4U + ( ( ( ( BIN_LEN ) - ( ( BIN_LEN ) / 3U ) * 3U ) | ( ( ( BIN_LEN ) - ( ( BIN_LEN ) / 3U ) * 3U ) >> 1 ) ) & 1U ) * ( 4U - ( ~ ( ( ( ( VARIANT ) & 2U ) >> 1 ) - 1U ) & ( 3U - ( ( BIN_LEN ) - ( ( BIN_LEN ) / 3U ) * 3U ) ) ) ) + 1U )
+sodium_base64_ENCODED_LEN(BIN_LEN, VARIANT) = ( ( ( BIN_LEN ) ÷ Cuint(3) ) * Cuint(4) + ( ( ( ( BIN_LEN ) - ( ( BIN_LEN ) ÷ Cuint(3) ) * Cuint(3) ) | ( ( ( BIN_LEN ) - ( ( BIN_LEN ) ÷ Cuint(3) ) * Cuint(3) ) >> 1 ) ) & Cuint(1) ) * ( Cuint(4) - ( ~ ( ( ( ( VARIANT ) & Cuint(2) ) >> 1 ) - Cuint(1) ) & ( Cuint(3) - ( ( BIN_LEN ) - ( ( BIN_LEN ) ÷ Cuint(3) ) * Cuint(3) ) ) ) ) + Cuint(1) )
 
 const SODIUM_VERSION_STRING = "1.0.18"
 const SODIUM_LIBRARY_VERSION_MAJOR = 10
