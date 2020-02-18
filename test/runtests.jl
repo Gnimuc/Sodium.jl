@@ -1,4 +1,4 @@
-using Sodium
+using Sodium.LibSodium
 using Test
 
 @testset "Sodium.jl" begin

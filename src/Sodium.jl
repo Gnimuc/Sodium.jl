@@ -1,5 +1,6 @@
 module Sodium
 
-greet() = print("Hello World!")
+include("LibSodium.jl")
+using .LibSodium
 
 end # module
