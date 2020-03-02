@@ -1,5 +1,7 @@
 using Base64
 # helper functions for crypto_
+export seal
+
 """
     seal(message, publickey)
 
