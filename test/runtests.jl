@@ -23,7 +23,7 @@ end
 end
 
 @testset "Sealed boxes convenience" begin
-    msg = "My Message"
+    msg = "My Message with true Unicode öéâù"
     recipient_pk = Vector{Cuchar}(undef, crypto_box_PUBLICKEYBYTES)
     recipient_sk = Vector{Cuchar}(undef, crypto_box_SECRETKEYBYTES)
     @test crypto_box_keypair(recipient_pk, recipient_sk) == 0
