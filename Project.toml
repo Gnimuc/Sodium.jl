@@ -1,7 +1,7 @@
 name = "Sodium"
 uuid = "4f5b5e99-b0ad-42cd-b47a-334e172ec8bd"
 authors = ["Gnimuc <qiyupei@gmail.com>"]
-version = "1.0.0"
+version = "1.0.2"
 
 [deps]
 libsodium_jll = "a9144af2-ca23-56d9-984f-0d03f7b5ccf8"
