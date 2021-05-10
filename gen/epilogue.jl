@@ -1,0 +1,3 @@
+# FIXME: handle extern
+const randombytes_internal_implementation = randombytes_implementation
+const randombytes_salsa20_implementation = randombytes_internal_implementation

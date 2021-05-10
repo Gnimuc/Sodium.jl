@@ -1,0 +1,27 @@
+[general]
+library_name = "libsodium"
+output_file_path = "../src/LibSodium.jl"
+module_name = "LibSodium"
+jll_pkg_name = "libsodium_jll"
+export_symbol_prefixes = ["SODIUM_", "sodium_", "crypto_", "randombytes_"]
+prologue_file_path = "./prologue.jl"
+epilogue_file_path = "./epilogue.jl"
+
+use_julia_native_enum_type = true
+use_deterministic_symbol = true
+
+printer_blacklist = [
+    "SODIUM_EXPORT",
+    "SODIUM_EXPORT_WEAK",
+    "crypto_pwhash_argon2i_MEMLIMIT_MAX",  # FIXME: Clang.jl failed to correctly create the literal type 
+    "crypto_pwhash_argon2id_MEMLIMIT_MAX",
+    "randombytes_salsa20_implementation",
+]
+
+[codegen.macro]
+macro_mode = "basic"
+
+functionlike_macro_whitelist = [
+    "SODIUM_MIN",
+]
+
